@@ -1,0 +1,136 @@
+﻿@model SqutioYzlm.Models._site
+@{
+    ViewBag.Title = "Blog";
+}
+
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<body class="home page-template page-template-page-templates page-template-full-width page-template-page-templatesfull-width-php page page-id-4 custom-background header-sticky penci-header-transparent penci_enable_ajaxsearch penci_sticky_content_sidebar penci_dis_padding_bw wpb-js-composer js-comp-ver-5.4.5 vc_responsive">
+
+    <div id="page" class="site">
+        <div class="site-header-wrapper penci-trans-nav">
+            <header id="masthead" class="site-header header--s1" data-height="80" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+                <div class="penci-container-1170 header-content__container">
+
+                    <div class="site-branding">
+                        <a href="@Url.Action("Anasayfa")" class="custom-logo-link" rel="home">
+                            <h1 class="site-title"><img href="@Url.Action("Anasayfa")" rel="home" src="~/Content/img/logo.jpg" style="width:60px; height:60px;" class="logo" alt="logo">Squtio Yazılım</h1>
+                        </a>
+                    </div><!-- .site-branding -->
+                    <nav id="site-navigation" class="main-navigation penci_disable_padding_menu penci_enable_line_menu pencimn-slide_down" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        <ul id="menu-main-menu" class="menu">
+                            <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="@Url.Action("Anasayfa")" itemprop="url">Anasafya</a></li>
+                            <li id="menu-item-983" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-983 current-menu-item page_item page-item-7 current_page_item menu-item-8"><a href="@Url.Action("Blog")" itemprop="url">BLOG</a></li>
+                            <li id="menu-item-983" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-983"><a href="@Url.Action("Hakkimizda")" itemprop="url">HAKKIMIZDA</a></li>
+                            <li id="menu-item-8" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="@Url.Action("Iletisim")" itemprop="url">İLETİŞİM</a></li>
+                        </ul>
+                    </nav><!-- #site-navigation -->
+                    <div class="header__social-search">
+                        <div class="header__social-media">
+                            <div class="header__content-social-media">
+
+                                @*<a class="social-media-item socail_media__facebook" target="_blank" href="#" title="Facebook" rel="noopener"><span class="socail-media-item__content"><i class="fa fa-facebook"></i><span class="social_title screen-reader-text">Facebook</span></span></a>
+                                    <a class="social-media-item socail_media__twitter" target="_blank" href="#" title="Twitter" rel="noopener"><span class="socail-media-item__content"><i class="fa fa-twitter"></i><span class="social_title screen-reader-text">Twitter</span></span></a>*@
+                                <a class="social-media-item socail_media__instagram" target="_blank" href="https://www.instagram.com/squtio.yazilim/" title="Instagram" rel="nofollow"><span class="socail-media-item__content"><i class="fa fa-instagram"></i><span class="social_title screen-reader-text">Instagram</span></span></a>
+                                @*<a class="social-media-item socail_media__behance" target="_blank" href="#" title="Behance" rel="noopener"><span class="socail-media-item__content"><i class="fa fa-behance"></i><span class="social_title screen-reader-text">Behance</span></span></a>
+                                    <a class="social-media-item socail_media__youtube" target="_blank" href="#" title="Youtube" rel="noopener"><span class="socail-media-item__content"><i class="fa fa-youtube-play"></i><span class="social_title screen-reader-text">Youtube</span></span></a>*@
+                                <a class="social-media-item socail_media__email_me" target="_blank" href="@Url.Action("Contact")" title="Email"><span class="socail-media-item__content"><i class="fa fa-envelope"></i><span class="social_title screen-reader-text">Email</span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <h2 class="iletisim">Blog Yazılarımız...</h2><hr />
+
+
+
+        <div id="content" class="site-content">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main">
+                    <div class="vc_row wpb_row vc_row_25485344 vc_row-fluid penci-pb-row vc_custom_1551322940123">
+                        <div class="wpb_column vc_column_container vc_col-sm-12 penci-col-12">
+                            <div class="vc_column-inner wpb_column vc_column_container vc_col-sm-12 penci-col-12 vc_custom_1551322926262">
+                                <div class="wpb_wrapper">
+                                    <div class="vc_row wpb_row vc_inner_16890050 vc_inner vc_row-fluid penci-pb-row vc_custom_1551322960084">
+                                        <div class="wpb_column vc_column_container vc_col-sm-12 penci-col-12">
+                                            <div class="vc_column-inner wpb_column vc_column_container vc_col-sm-12 penci-col-12 vc_custom_1551322950600">
+                                                <div class="wpb_wrapper">
+                                                    <div id="penci_block_37__49183252" class="penci-block-vc penci-block_37 penci__general-meta style-title-1 style-title-left penci-block-load_more penci-imgtype-landscape penci-link-filter-hidden penci-empty-block-title penci-block-col-2" data-current="1" data-blockUid="penci_block_37__49183252">
+                                                        <div class="penci-block-heading">
+                                                        </div>
+                                                        <div id="penci_block_37__49183252block_content" class="penci-block_content">
+                                                            <div class="penci-block_content__items penci-block-items__1">
+                                                                @foreach (var item in Model.m_blogs)
+                                                                {
+                                                                    <article class="penci-post-item__1 hentry penci-post-item">
+                                                                        <div class="penci_post_thumb">
+                                                                            <img class="penci-image-holder  penci-lazy penci-image_has_icon" alt="blogResim" src="~/Content/img/@item.blog_img" onclick="window.location.href='@Url.Action("blog-detay", new { id = item.blog_url})';" style="cursor:pointer" />
+                                                                            <div class="entry-meta-item penci-post-cat">
+                                                                                <a class="penci-cat-name" href="@Url.Action("blog-detay", new { id = item.blog_url})" title="İçeriğin tümünü oku">Tümünü Oku</a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="penci_post_content">
+                                                                            <h3 class="penci__post-title entry-title">
+                                                                                <a href="@Url.Action("blog-detay", new { id = item.blog_url})" title="@item.blog_baslik">@item.blog_baslik</a>
+                                                                            </h3>
+
+                                                                            <div class="penci_post-meta">
+                                                                                <span style="font-weight:bold" class="entry-meta-item penci-posted-on">
+                                                                                    <i class="fa fa-clock-o"></i>
+                                                                                    <time>@Convert.ToDateTime(item.blog_kayit).ToString("dd.MM.yyyy")</time>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </article>
+                                                                }
+
+
+
+
+
+                                                            </div>
+                                                            <div class="penci-loader-effect penci-loading-animation-9">
+                                                                <div class="penci-loading-circle">
+                                                                    <div class="penci-loading-circle1 penci-loading-circle-inner">
+                                                                    </div> <div class="penci-loading-circle2 penci-loading-circle-inner">
+                                                                    </div> <div class="penci-loading-circle3 penci-loading-circle-inner">
+                                                                    </div> <div class="penci-loading-circle4 penci-loading-circle-inner">
+                                                                    </div>
+                                                                    <div class="penci-loading-circle5 penci-loading-circle-inner">
+                                                                    </div>
+                                                                    <div class="penci-loading-circle6 penci-loading-circle-inner">
+                                                                    </div>
+                                                                    <div class="penci-loading-circle7 penci-loading-circle-inner">
+                                                                    </div> <div class="penci-loading-circle8 penci-loading-circle-inner">
+                                                                    </div> <div class="penci-loading-circle9 penci-loading-circle-inner">
+                                                                    </div>
+                                                                    <div class="penci-loading-circle10 penci-loading-circle-inner"></div>
+                                                                    <div class="penci-loading-circle11 penci-loading-circle-inner"></div>
+                                                                    <div class="penci-loading-circle12 penci-loading-circle-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="penci-pagination penci-ajax-more penci-pag-center">
+                                                            <a class="penci-block-ajax-more-button button " data-mes="Sorry, No more posts" data-block_id="penci_block_37__49183252block_content">
+                                                                <span class="ajax-more-text">Load more posts</span><span class="ajaxdot"></span><i class="fa fa-refresh"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+            </div>
+        </div>
+    </div><!-- #page -->
+</body>
+</html>

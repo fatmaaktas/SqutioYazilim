@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Siz Hayal Edin, Biz Tasarlayalım. Şirketinize veya işletmenize değer kazandıracak çalışmalar yapıyoruz.">
+    <meta name="author" content="Fatma Aktaş">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Squtio Yazılım - Dashboard</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="/Content/admincss/bootstrap.css">
+
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="/Content/admincss/bootstrap-extend.css">
+
+    <!-- theme style -->
+    <link rel="stylesheet" href="/Content/admincss/master_style.css">
+
+    <!-- Bx-code admin skins -->
+    <link rel="stylesheet" href="/Content/admincss/_all-skins.css">
+
+    <!-- Data Table-->
+    <link rel="stylesheet" type="text/css" href="/Content/admincss/datatables.min.css" />
+
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="/Content/admincss/bootstrap3-wysihtml5.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/Content/adminjs/html5shiv.min.js"></script>
+    <script src="/Content/adminjs/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .yeni_logo {
+            position: absolute;
+            top: 10px;
+            left: 25px;
+            width: 90px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <img src="~/Content/img/logo.jpg" class="yeni_logo">
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top">
+                <div class="ml-10 app-menu">
+                    <ul class="header-megamenu nav">
+                        <li class="btn-group nav-item">
+                            <a href="#" class="nav-link rounded" data-provide="fullscreen" title="Full Screen">
+                                <i class="mdi mdi-crop-free"></i>
+                            </a>
+                        </li>
+
+                        <li class="search-box">
+                            <a class="nav-link hidden-sm-down app-search-icon" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search" action="/AramaSonuclari" method="post" style="display: none;">
+                                <input type="text" class="form-control" name="aranan_kelimeler" placeholder="Portföy No &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account-->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Hoşgeldiniz @Session["adi"]
+                            </a>
+                            @*<ul class="dropdown-menu scale-up">
+                                    <!-- Menu Body -->
+                                    <li class="user-body bt-0">
+                                        <div class="row no-gutters">
+                                            <div class="col-12 text-left">
+                                                <a href="#"><i class="ion ion-person"></i> My Profile</a>
+                                            </div>
+                                            <div class="col-12 text-left">
+                                                <a href="#"><i class="ion ion-email-unread"></i> Inbox</a>
+                                            </div>
+                                            <div class="col-12 text-left">
+                                                <a href="#"><i class="ion ion-settings"></i> Setting</a>
+                                            </div>
+                                            <div role="separator" class="divider col-12"></div>
+                                            <div class="col-12 text-left">
+                                                <a href="#"><i class="ti-settings"></i> Account</a>
+                                            </div>
+                                            <div role="separator" class="divider col-12"></div>
+                                            <div class="col-12 text-left">
+                                                <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                            </div>
+                                        </div>
+                                        <!-- /.row -->
+                                    </li>
+                                </ul>*@
+                        </li>
+                        <!-- Messages -->
+                        <!-- Control Sidebar Toggle Button -->
+                        <li class="messages-menu">&nbsp;</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar-->
+            <section class="sidebar">
+
+                <!-- sidebar menu-->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li style="height:50px;">&nbsp;</li>
+
+                    <li class="@ViewBag.active1">
+                        <a href="@Url.Action("Projeler")">
+                            <i class="mdi mdi-minus-network"></i>
+                            <span>Projeler</span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="@Url.Action("Bloglar")">
+                            <i class="mdi mdi-vector-combine"></i> <span>Bloglar</span>
+                            <span class="pull-right-container">
+                            </span>
+                        </a>
+                    </li>
+
+                    @*<li class="@ViewBag.active3">
+                        <a href="@Url.Action("Haber")">
+                            <i class="mdi mdi-vector-combine"></i> <span>Haberler</span>
+                            <span class="pull-right-container">
+                            </span>
+                        </a>
+                    </li>*@
+
+
+                    <li class="treeview @ViewBag.active8">
+                        <a href="#">
+                            <i class="ion ion-person"></i> <span>Hesap Bilgileri</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-caret-down pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="@ViewBag.active8"><a href="@Url.Action("Bilgilerim")"><i class="fa fa-circle-thin"></i>Bilgilerim</a></li>
+                            <li class="@ViewBag.active8"><a href="@Url.Action("Logout")"><i class="fa fa-power-off"></i>Çıkış</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        @RenderBody()
+
+
+        <footer class="main-footer">
+            <div class="pull-right d-none d-sm-inline-block">
+                <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Admin")">Anasayfa</a>
+                    </li>
+
+                </ul>
+            </div>
+            &copy; 2021 <a href="http://squtioyazilim.com" target="_blank">Squtio Yazılım</a>. Tüm hakları saklıdır.
+        </footer>
+
+
+
+
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery 3 -->
+    <script src="/Content/adminjs/jquery-3.3.1.js"></script>
+
+    <!-- fullscreen -->
+    <script src="/Content/adminjs/screenfull.js"></script>
+    <!-- jQuery ui -->
+    <script src="/Content/adminjs/jquery-ui.js"></script>
+
+    <!-- popper -->
+    <script src="/Content/adminjs/popper.min.js"></script>
+
+    <!-- Bootstrap 4.0-->
+    <script src="/Content/adminjs/bootstrap.js"></script>
+    <script src="/Content/adminjs/bootstrap.min.js"></script>
+
+    <!-- Slimscroll -->
+    <script src="/Content/adminjs/jquery.slimscroll.js"></script>
+
+    <!-- FastClick -->
+    <script src="/Content/adminjs/fastclick.js"></script>
+
+    <!-- Sparkline -->
+    <script src="/Content/adminjs/jquery.sparkline.min.js"></script>
+
+    <!-- apexcharts -->
+    <script src="/Content/adminjs/irregular-data-series.js"></script>
+    <script src="/Content/adminjs/apexcharts.js"></script>
+
+    <!-- This is data table -->
+    <script src="/Content/adminjs/datatables.min.js"></script>
+    <script src="/Content/adminjs/data-table.js"></script>
+    <script src="/Content/adminjs/template.js"></script>
+
+    <!-- Bx-code admin dashboard demo (This is only for demo purposes) -->
+    <script src="/Content/adminjs/dashboard-2.js"></script>
+
+    <!-- Bootstrap WYSIHTML5 -->
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="/Content/adminjs/bootstrap3-wysihtml5.all.js"></script>
+
+    <!-- Bx-code admin for editor -->
+    <!-- Bx-code admin App -->
+
+
+
+</body>
+</html>

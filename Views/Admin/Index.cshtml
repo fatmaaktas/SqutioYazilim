@@ -1,0 +1,127 @@
+﻿@model SqutioYzlm.Models.Login
+@{
+    Layout = null;
+    
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>Squtio Yazılım - Admin Paneli</title>
+
+    <!-- Bootstrap 4.1-->
+    <link rel="stylesheet" href="/Content/admincss/bootstrap.min.css">
+
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="/Content/admincss/bootstrap-extend.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/Content/admincss/master_style.css">
+    <!-- Bx-code admin skins -->
+    <link rel="stylesheet" href="/Content/admincss/_all-skins.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via-->
+    <!--[if lt IE 9]>
+    <script src="/Content/adminjs/html5shiv.min.js"></script>
+    <script src="/Content/adminjs/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="hold-transition bg-green bg-img" style="background-image: url(/Content/adminimg/bg-5.jpg)" data-overlay="2">
+
+    <div class="container h-p100">
+        <div class="row align-items-center justify-content-md-center h-p100">
+
+            <div class="col-12">
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-lg-4 col-md-5 col-12">
+                        <div class="b-1">
+                            <div class="content-top-agile p-10 pb-0">
+                                <h2 class="text-white mb-0">Squtio Yazılım</h2>
+                            </div>
+                            <div class="p-30">
+
+                                @using (Html.BeginForm("Index", "Admin", FormMethod.Post))
+                                {
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-transparent text-white"><i class="ti-user"></i></span>
+                                            </div>
+
+                                            @Html.TextBoxFor(m => m.username, new { id = "username", @class = "form-control pl-15 bg-transparent text-white plc-white", @placeholder = "Kullanıcı Adınız *" })
+                                            <div>@Html.ValidationMessageFor(m => m.username)</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text  bg-transparent text-white"><i class="ti-lock"></i></span>
+                                            </div>
+
+                                            @Html.PasswordFor(m => m.password, new { id = "password", @class = "form-control pl-15 bg-transparent text-white plc-white", @placeholder = "Şifreniz *" })
+                                            <div>@Html.ValidationMessageFor(m => m.password)</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        @*<div class="col-6">
+                                                <div class="checkbox text-white">
+                                                    <input type="checkbox" id="basic_checkbox_1">
+                                                    <label for="basic_checkbox_1">Remember Me</label>
+                                                </div>
+                                            </div>*@
+                                        <!-- /.col -->
+                                        @*<div class="col-6">
+                                                <div class="fog-pwd text-right">
+                                                    <a href="javascript:void(0)" class="text-white hover-warning"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
+                                                </div>
+                                            </div>*@
+                                        <!-- /.col -->
+                                        <div class="col-12 text-center">
+                                            <button type="submit" class="btn btn-danger btn-rounded mt-10">GİRİŞ</button>
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                }
+
+                                @*<div class="text-center text-white">
+                                        <p class="mt-20">- Sign With -</p>
+                                        <p class="gap-items-2 mb-20">
+                                            <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-facebook"></i></a>
+                                            <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-twitter"></i></a>
+                                            <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-instagram"></i></a>
+                                        </p>
+                                    </div>*@
+                                <div class="text-center">
+                                    <p class="mt-15 mb-0 text-white">@ViewBag.Message</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery 3 -->
+    <script src="/Content/adminjs/jquery-3.3.1.js"></script>
+
+    <!-- fullscreen -->
+    <script src="/Content/adminjs/screenfull.js"></script>
+
+    <!-- popper -->
+    <script src="/Content/adminjs/popper.min.js"></script>
+
+    <!-- Bootstrap 4.0-->
+    <script src="/Content/adminjs/bootstrap.min.js"></script>
+</body>
+</html>
+

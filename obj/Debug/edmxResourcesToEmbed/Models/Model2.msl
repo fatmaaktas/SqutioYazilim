@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SqutioModel1StoreContainer" CdmEntityContainer="SqutioEntities1">
+    <EntitySetMapping Name="tbl_blog">
+      <EntityTypeMapping TypeName="SqutioModel1.tbl_blog">
+        <MappingFragment StoreEntitySet="tbl_blog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="blog_baslik" ColumnName="blog_baslik" />
+          <ScalarProperty Name="blog_yazi" ColumnName="blog_yazi" />
+          <ScalarProperty Name="blog_yazar" ColumnName="blog_yazar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

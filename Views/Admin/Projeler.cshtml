@@ -1,0 +1,127 @@
+﻿@model SqutioYzlm.Models._site
+@{
+    ViewBag.Title = "Projeler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.active6 = "active";
+}
+
+
+<link rel="stylesheet" type="text/css" href="/Content/admincss/datatables.min.css" />
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!--Alert alanı Başla-->
+    @if (Session["Alert"] != "" && Session["Alert"] != null)
+    {
+        <div class="box-body">
+
+            <div class="callout callout-primary">
+                <h4>Makale Ekle!</h4>
+
+                <p>
+                    @Session["Alert"].ToString()
+                </p>
+            </div>
+
+        </div>
+        Session["Alert"] = "";
+    }
+    <!--Alert Alanı Bitiş-->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box">
+                        <div class="box-header with-border bg-light">
+                            <h4 class="box-title">TÜM PROJELER</h4>
+                            <div class="box-controls pull-right">
+                                <a href="#" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal-center">PROJE EKLE</a>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Proje Adı</th>
+                                            <th>Proje Konusu</th>
+                                            <th>Detay</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.m_projes)
+                                        {
+                                            <tr>
+                                                <td>@item.proje_adi</td>
+                                                <td>@item.proje_konu</td>
+                                                <td align="right"><a href="@Url.Action("ProjeDuzenle", new { id = item.id})">Detay</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+
+<script src="/Content/adminjs/project-table.js"></script>
+
+<!-- Modal 1 başla -->
+<div class="modal center-modal fade" id="modal-center" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <!--Başla-->
+                <div class="box">
+                    <div class="box-header">
+                        <h4 class="box-title">Projeyi Kaydet</h4>
+
+                    </div>
+                    <!-- /.box-header -->
+                    <form action="/Admin/projeEkle" method="post" name="frm_proje_kaydet" enctype="multipart/form-data">
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="proje_adi" placeholder="Proje Adı:" required data-validation-required-message="Bu alanı boş geçemezsiniz">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="proje_konu" placeholder="Proje Konusu:" required data-validation-required-message="Bu alanı boş geçemezsiniz">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="proje_link" placeholder="Proje Linki:" required data-validation-required-message="Bu alanı boş geçemezsiniz">
+                            </div>
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="file1" placeholder="Proje Resim:" required data-validation-required-message="Bu alanı boş geçemezsiniz">
+                            </div>
+                            
+                        </div>
+                        <div class="box-footer clearfix">
+                            <input type="button" value="Kapat" class="btn btn-bold btn-secondary" data-dismiss="modal">
+                            <input type="submit" class="pull-right btn btn-info" value="Kaydet" />
+                        </div>
+                    </form>
+                </div>
+                <!--Bitiş -->
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.modal 1 bitiş -->
